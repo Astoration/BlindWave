@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 067f467a5b90f484e9f355356783e55d
-timeCreated: 1500349981
+timeCreated: 1500351262
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -31,7 +31,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
     wrapU: 1
     wrapV: 1
@@ -40,11 +40,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 93, y: 134, z: 93, w: 131}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -63,11 +63,99 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
-    physicsShape: []
+    outline:
+    - - {x: 455, y: -416}
+      - {x: 460, y: -414}
+      - {x: 464, y: -410}
+      - {x: 467, y: -403}
+      - {x: 467, y: -401}
+      - {x: 468, y: -400}
+      - {x: 468, y: -397}
+      - {x: 469, y: -396}
+      - {x: 469, y: -389}
+      - {x: 470, y: -388}
+      - {x: 470, y: 389}
+      - {x: 469, y: 390}
+      - {x: 469, y: 397}
+      - {x: 468, y: 398}
+      - {x: 467, y: 404}
+      - {x: 465, y: 409}
+      - {x: 463, y: 410}
+      - {x: 463, y: 411}
+      - {x: 460, y: 415}
+      - {x: 455, y: 417}
+      - {x: 453, y: 417}
+      - {x: 452, y: 418}
+      - {x: 442, y: 418}
+      - {x: 442, y: 420}
+      - {x: 440, y: 422}
+      - {x: -440, y: 422}
+      - {x: -442, y: 420}
+      - {x: -442, y: 418}
+      - {x: -450, y: 418}
+      - {x: -451, y: 417}
+      - {x: -454, y: 417}
+      - {x: -462, y: 413}
+      - {x: -466, y: 404}
+      - {x: -466, y: 401}
+      - {x: -468, y: 397}
+      - {x: -468, y: 390}
+      - {x: -469, y: 389}
+      - {x: -469, y: -388}
+      - {x: -468, y: -389}
+      - {x: -468, y: -396}
+      - {x: -467, y: -397}
+      - {x: -466, y: -403}
+      - {x: -464, y: -408}
+      - {x: -462, y: -409}
+      - {x: -462, y: -410}
+      - {x: -459, y: -414}
+      - {x: -454, y: -416}
+      - {x: -452, y: -416}
+      - {x: -451, y: -417}
+      - {x: -445, y: -417}
+      - {x: -444, y: -418}
+      - {x: 445, y: -418}
+      - {x: 446, y: -417}
+      - {x: 452, y: -417}
+      - {x: 453, y: -416}
+    physicsShape:
+    - - {x: 453, y: 411}
+      - {x: -451, y: 411}
+      - {x: -462, y: 397}
+      - {x: -462, y: -394}
+      - {x: -451, y: -410}
+      - {x: 441, y: -410}
+      - {x: 452, y: -409}
+      - {x: 463, y: -393}
+      - {x: 463, y: 394}
   spritePackingTag: 
   userData: 
   assetBundleName: 
