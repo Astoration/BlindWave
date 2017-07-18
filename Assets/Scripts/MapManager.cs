@@ -12,11 +12,11 @@ public class MapManager : MonoBehaviour {
 	}
 
 	void initializeMap(){
-		for (float y = top.transform.position.y; y < bottom.transform.position; y += 1) {
+		for (float y = top.transform.position.y; y < bottom.transform.position.y; y += 1) {
 			for (int i = 0; i < density; i++) {
 				float x = Random.Range (left.transform.position.x, right.transform.position.x);
 				GameObject particle = Instantiate (particles [Random.Range (0, 2)]);
-				particle.transform.position = Vector2 (x, y);
+				particle.transform.position = new Vector2 (x, y);
 			}
 		}
 	}
