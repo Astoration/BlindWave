@@ -38,11 +38,14 @@ public class PlayerController : MonoBehaviour {
 		#if UNITY_EDITOR
 		if(Input.GetKeyDown(KeyCode.Space)){
 			GameObject echoObject = Instantiate(echo,this.transform.position,Quaternion.identity);
-			echoObject.GetComponent<Echo>().lifeTime = 5f;
+			echoObject.GetComponent<Echo>().lifeTime = 2f;
 		}
 		#endif
-
-		Debug.Log(""+levelMax);
+		if (1 < levelMax) {
+			GameObject echoObject = Instantiate(echo,this.transform.position,Quaternion.identity);
+			echoObject.GetComponent<Echo>().lifeTime = 2f;
+		}
+		Debug.Log(deviceName+":"+(1<levelMax));
 	}
 
 	void moveControl(){

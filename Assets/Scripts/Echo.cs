@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Echo : MonoBehaviour {
 	public float lifeTime;
-	float speed = 1f;
+	float speed = 4f;
 
 	// Use this for initialization
 	void Start () {

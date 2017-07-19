@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Particle
-  - ehco
+  - echo
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114400137249637934}
   m_Layer: 0
   m_Name: ring
-  m_TagString: ehco
+  m_TagString: echo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
