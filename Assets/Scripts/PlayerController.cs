@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour {
 		if (0.1 < levelMax && echoEnable) {
 			GameObject echoObject = Instantiate(echo,this.transform.position,Quaternion.identity);
 			echoObject.GetComponent<Echo>().lifeTime = levelMax*10;
+			StartCoroutine (cooltime (levelMax * 10));
 		}
 
 	}
@@ -67,6 +68,13 @@ public class PlayerController : MonoBehaviour {
 		echoEnable = false;
 		yield return new WaitForSeconds (time);
 		echoEnable = true;
+	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Particle") {
+			coll.gameObject.GetComponent<SpriteRenderer> ().color = Color.red;
+			Time.timeScale = 0;
+		}
 	}
 
 	void moveControl(){
@@ -95,8 +103,8 @@ public class PlayerController : MonoBehaviour {
 		transform.position = Vector2.MoveTowards (transform.position, targetPoint,speed*Time.deltaTime);
 		postPosition = transform.position;
 		Vector2 distanceToScreen = Camera.main.WorldToViewportPoint (transform.position);
-		if (distanceToScreen.x < 0.3 || 0.7 < distanceToScreen.x
-		   || distanceToScreen.y < 0.3 || 0.7 < distanceToScreen.y) {
+		if (distanceToScreen.x < 0.2 || 0.8 < distanceToScreen.x
+		   || distanceToScreen.y < 0.2 || 0.8 < distanceToScreen.y) {
 			Vector2 movement = postPosition - prePosition;
 			Camera.main.transform.Translate (movement);
 		}
