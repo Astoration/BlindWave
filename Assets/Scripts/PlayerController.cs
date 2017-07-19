@@ -5,14 +5,38 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	public float speed = 5f;
 	private Vector2 targetPoint;
+	public GameObject echo;
+	private AudioClip mic;
+	private const int buffer = 128;
+	private string deviceName;
 	// Use this for initialization
 	void Start () {
 		targetPoint = transform.position;
+		deviceName = Microphone.devices [0];
+		mic = Microphone.Start(deviceName, true, 10, 44100);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		moveControl ();
+		echoControl ();
+	}
+
+	void echoControl(){
+		float[] channelData = new float[buffer];
+		int position = Microphone.GetPosition (deviceName) - (buffer + 1);
+		if (position < 0)
+			return;
+		mic.GetData (channelData, position);
+		float levelMax = 0;
+		for (int i = 0; i < buffer; i++) {
+			float wavePeak = channelData[i] * channelData[i];
+			if (levelMax < wavePeak) {
+				levelMax = wavePeak;
+			}
+		}
+
+		Debug.Log(""+levelMax);
 	}
 
 	void moveControl(){
@@ -41,8 +65,8 @@ public class PlayerController : MonoBehaviour {
 		transform.position = Vector2.MoveTowards (transform.position, targetPoint,speed*Time.deltaTime);
 		postPosition = transform.position;
 		Vector2 distanceToScreen = Camera.main.WorldToViewportPoint (transform.position);
-		if (distanceToScreen.x < 0.1 || 0.9 < distanceToScreen.x
-		   || distanceToScreen.y < 0.1 || 0.9 < distanceToScreen.y) {
+		if (distanceToScreen.x < 0.3 || 0.7 < distanceToScreen.x
+		   || distanceToScreen.y < 0.3 || 0.7 < distanceToScreen.y) {
 			Vector2 movement = postPosition - prePosition;
 			Camera.main.transform.Translate (movement);
 		}
