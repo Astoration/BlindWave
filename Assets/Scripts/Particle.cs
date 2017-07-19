@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Particle : MonoBehaviour {
 	public Material defaultMaterial;
 	public Material lightingMaterial;
-	public Text debug;
 	private SpriteRenderer spriteRenderer;
 	private Rigidbody2D rigid;
 	private Camera camera;
@@ -17,7 +16,6 @@ public class Particle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		camera = Camera.main;
-		debug = GameObject.Find ("Text").GetComponent<Text>();
 		rigid = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
@@ -50,7 +48,6 @@ public class Particle : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		debug.text = other.gameObject.tag;
 		if (other.gameObject.tag == "echo") {
 			spriteRenderer.material = defaultMaterial;
 			time = 0;

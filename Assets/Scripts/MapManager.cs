@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapManager : MonoBehaviour {
 	public GameObject[] particles;
 	public GameObject[] item;
-
+	public GameObject goalPrefabs;
 	public int density = 10;
 	public GameObject left,right,top,bottom;
 	// Use this for initialization
@@ -31,6 +31,13 @@ public class MapManager : MonoBehaviour {
 				}
 			}
 		}
+		Vector2 pos = new Vector2 (Random.Range(left.transform.position.x,right.transform.position.x), Random.Range(bottom.transform.position.y,top.transform.position.y));
+		while(Vector2.Distance(Vector2.zero,pos)<50){
+			pos = new Vector2 (Random.Range(left.transform.position.x,right.transform.position.x), Random.Range(bottom.transform.position.y,top.transform.position.y));
+		}
+		GameObject goal = Instantiate (goalPrefabs);
+		goal.transform.position = pos;
+
 	}
 	
 	// Update is called once per frame

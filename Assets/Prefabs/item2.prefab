@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 58503494211888152}
   - component: {fileID: 114433164652323952}
   - component: {fileID: 50798641984983426}
+  - component: {fileID: 58579063267167300}
   m_Layer: 0
   m_Name: item2
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +79,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.3502833
+--- !u!58 &58579063267167300
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193912989962110}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5000002
 --- !u!114 &114433164652323952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,7 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   lightingMaterial: {fileID: 2100000, guid: 917e16927da9c421aaf5f0a9293a1afe, type: 2}
-  debug: {fileID: 0}
 --- !u!212 &212732789080379704
 SpriteRenderer:
   m_ObjectHideFlags: 1

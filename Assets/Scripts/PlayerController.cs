@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 	public float speed = 5f;
@@ -10,8 +11,12 @@ public class PlayerController : MonoBehaviour {
 	private const int buffer = 128;
 	private string deviceName;
 	private bool echoEnable = true;
+	public GameObject gameOver;
+	public GameObject clear;
+	public Text minute,second;
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1;
 		targetPoint = transform.position;
 		deviceName = Microphone.devices [0];
 		mic = Microphone.Start(deviceName, true, 999, 44100);
@@ -73,8 +78,14 @@ public class PlayerController : MonoBehaviour {
 		if (coll.gameObject.tag == "Particle") {
 			coll.gameObject.GetComponent<SpriteRenderer> ().color = Color.red;
 			Time.timeScale = 0;
-		}else(coll.gameObject.tag == "item"){
+			gameOver.SetActive (true);
+		}else if(coll.gameObject.tag == "item"){
 			Destroy(coll.gameObject);
+		}else if(coll.gameObject.tag == "goal"){
+			Time.timeScale = 0;
+			clear.SetActive (true);
+			minute.text = ((int)Time.time / 60) + "";
+			second.text = Time.time % 60 +"";
 		}
 	}
 
