@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212719388717090358}
   - component: {fileID: 50195008222109108}
   - component: {fileID: 58733247741618730}
+  - component: {fileID: 114169818636510740}
   m_Layer: 0
   m_Name: hexagon
   m_TagString: Particle
@@ -77,6 +78,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114169818636510740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600912876456830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b2d2c0e624e47edaa6c4afa89b292c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  lightingMaterial: {fileID: 2100000, guid: 917e16927da9c421aaf5f0a9293a1afe, type: 2}
 --- !u!212 &212719388717090358
 SpriteRenderer:
   m_ObjectHideFlags: 1

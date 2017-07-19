@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4202142438499416}
   - component: {fileID: 212759111327348542}
   - component: {fileID: 58726830359950158}
+  - component: {fileID: 114400137249637934}
   m_Layer: 0
   m_Name: ring
   m_TagString: ehco
@@ -50,12 +51,24 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.2499999
+--- !u!114 &114400137249637934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701281238856968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6605c4098c704c858d25d939803d141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0
 --- !u!212 &212759111327348542
 SpriteRenderer:
   m_ObjectHideFlags: 1

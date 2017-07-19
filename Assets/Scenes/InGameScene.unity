@@ -513,6 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  echo: {fileID: 1701281238856968, guid: 683680ba97c0a47c8847990ed3ec3d49, type: 2}
 --- !u!58 &1391345456
 CircleCollider2D:
   m_ObjectHideFlags: 0

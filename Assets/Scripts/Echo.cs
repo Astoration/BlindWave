@@ -14,7 +14,8 @@ public class Echo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		lifeTime -= Time.deltaTime;
-		transform.localScale = transform.localScale + speed * Time.deltaTime;
+		float scaleOut = speed * Time.deltaTime;
+		transform.localScale = transform.localScale + new Vector3(scaleOut,scaleOut);
 		if (lifeTime < 0)
 			Destroy (this.gameObject);
 	}
