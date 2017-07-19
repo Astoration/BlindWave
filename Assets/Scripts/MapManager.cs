@@ -22,7 +22,7 @@ public class MapManager : MonoBehaviour {
 				if (Vector2.Distance (Vector2.zero, position) < 5)
 					continue;
 
-				if (Random.Range (0f, 100f) < 1f) {
+				if (Random.Range (0f, 100f) < 10f) {
 					GameObject particle = Instantiate (item [Random.Range (0, item.Length)]);
 					particle.transform.position = position;
 				} else {
@@ -32,7 +32,8 @@ public class MapManager : MonoBehaviour {
 			}
 		}
 		Vector2 pos = new Vector2 (Random.Range(left.transform.position.x,right.transform.position.x), Random.Range(bottom.transform.position.y,top.transform.position.y));
-		while(Vector2.Distance(Vector2.zero,pos)<50){
+		int difficult = PlayerPrefs.GetInt ("difficult");
+		while(20*difficult<Vector2.Distance(Vector2.zero,pos)){
 			pos = new Vector2 (Random.Range(left.transform.position.x,right.transform.position.x), Random.Range(bottom.transform.position.y,top.transform.position.y));
 		}
 		GameObject goal = Instantiate (goalPrefabs);

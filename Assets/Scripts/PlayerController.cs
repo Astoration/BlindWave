@@ -78,14 +78,16 @@ public class PlayerController : MonoBehaviour {
 		if (coll.gameObject.tag == "Particle") {
 			coll.gameObject.GetComponent<SpriteRenderer> ().color = Color.red;
 			Time.timeScale = 0;
+			SoundManager.instance.playPause ();
 			gameOver.SetActive (true);
 		}else if(coll.gameObject.tag == "item"){
+			SoundManager.instance.playItem ();
 			Destroy(coll.gameObject);
 		}else if(coll.gameObject.tag == "goal"){
 			Time.timeScale = 0;
 			clear.SetActive (true);
 			minute.text = ((int)Time.time / 60) + "";
-			second.text = Time.time % 60 +"";
+			second.text = ((int)Time.time % 60) +"";
 		}
 	}
 

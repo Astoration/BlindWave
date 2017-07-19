@@ -26,6 +26,7 @@ public class TitleSceneManager : MonoBehaviour {
 	}
 
 	public void startGame(int level){
+		PlayerPrefs.SetInt ("difficult", level + 1);
 		SceneManager.LoadScene ("InGameScene");
 	}
 
