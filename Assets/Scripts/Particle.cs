@@ -6,16 +6,30 @@ public class Particle : MonoBehaviour {
 	public Material defaultMaterial;
 	public Material lightingMaterial;
 	private SpriteRenderer spriteRenderer;
+	private Rigidbody2D rigid;
+	private Camera camera;
 	float time = 0;
 	float speed = 1;
 	float lifeTime = 0;
 	// Use this for initialization
 	void Start () {
+		camera = Camera.main;
+		rigid = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
-	
-	// Update is called once per frame
+
+	bool getSeen(){
+		bool hasSeen = Vector3.Distance (this.transform.position, camera.transform.position) < 30;
+		return hasSeen;
+	}
+
 	void Update () {
+		if (getSeen()) {
+			rigid.simulated = true;
+		} else {
+			rigid.simulated = false;
+			return;
+		}
 		if (lifeTime <= 0) {
 			spriteRenderer.material = lightingMaterial;
 			Color color = spriteRenderer.color;

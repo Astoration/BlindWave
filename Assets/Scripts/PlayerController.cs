@@ -9,11 +9,26 @@ public class PlayerController : MonoBehaviour {
 	private AudioClip mic;
 	private const int buffer = 128;
 	private string deviceName;
+	private bool echoEnable = true;
 	// Use this for initialization
 	void Start () {
 		targetPoint = transform.position;
 		deviceName = Microphone.devices [0];
-		mic = Microphone.Start(deviceName, true, 10, 44100);
+		mic = Microphone.Start(deviceName, true, 999, 44100);
+	}
+
+	void OnEnable()
+	{
+		mic = Microphone.Start(deviceName, true, 999, 44100);
+	}
+
+	void OnDisable()
+	{
+		Microphone.End (deviceName);
+	}
+
+	public void OnDestroy(){
+		Microphone.End (deviceName);
 	}
 	
 	// Update is called once per frame
@@ -41,11 +56,17 @@ public class PlayerController : MonoBehaviour {
 			echoObject.GetComponent<Echo>().lifeTime = 2f;
 		}
 		#endif
-		if (1 < levelMax) {
+		if (0.1 < levelMax && echoEnable) {
 			GameObject echoObject = Instantiate(echo,this.transform.position,Quaternion.identity);
-			echoObject.GetComponent<Echo>().lifeTime = 2f;
+			echoObject.GetComponent<Echo>().lifeTime = levelMax*10;
 		}
-		Debug.Log(deviceName+":"+(1<levelMax));
+
+	}
+
+	IEnumerator cooltime(float time){
+		echoEnable = false;
+		yield return new WaitForSeconds (time);
+		echoEnable = true;
 	}
 
 	void moveControl(){
