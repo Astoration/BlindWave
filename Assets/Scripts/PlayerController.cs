@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour {
 			echoObject.GetComponent<Echo>().lifeTime = levelMax*10;
 			StartCoroutine (cooltime (levelMax * 10));
 		}
-
 	}
 
 	IEnumerator cooltime(float time){
@@ -74,6 +73,8 @@ public class PlayerController : MonoBehaviour {
 		if (coll.gameObject.tag == "Particle") {
 			coll.gameObject.GetComponent<SpriteRenderer> ().color = Color.red;
 			Time.timeScale = 0;
+		}else(coll.gameObject.tag == "item"){
+			Destroy(coll.gameObject);
 		}
 	}
 

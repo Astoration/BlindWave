@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Particle
   - echo
+  - item
   layers:
   - Default
   - TransparentFX
