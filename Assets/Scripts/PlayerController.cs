@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void moveControl(){
-		Vector2 prePosition = transform.position, postPosition;
 		#if UNITY_EDITOR
 		if(Input.GetMouseButtonDown(0)){
 			targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -101,12 +100,5 @@ public class PlayerController : MonoBehaviour {
 		if(axis.magnitude == 0)
 		#endif
 		transform.position = Vector2.MoveTowards (transform.position, targetPoint,speed*Time.deltaTime);
-		postPosition = transform.position;
-		Vector2 distanceToScreen = Camera.main.WorldToViewportPoint (transform.position);
-		if (distanceToScreen.x < 0.2 || 0.8 < distanceToScreen.x
-		   || distanceToScreen.y < 0.2 || 0.8 < distanceToScreen.y) {
-			Vector2 movement = postPosition - prePosition;
-			Camera.main.transform.Translate (movement);
-		}
 	}
 }
